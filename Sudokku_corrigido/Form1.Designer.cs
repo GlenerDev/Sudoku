@@ -39,10 +39,10 @@
             button11 = new Button();
             button10 = new Button();
             button9 = new Button();
-            button8 = new Button();
             button7 = new Button();
             button4 = new Button();
             button3 = new Button();
+            button8 = new Button();
             lbTrySudokku = new Label();
             tlpMatrix = new TableLayoutPanel();
             button89 = new Button();
@@ -312,21 +312,6 @@
             button9.UseVisualStyleBackColor = false;
             button9.Click += EventBtnClickSelectDigit;
             // 
-            // button8
-            // 
-            button8.Anchor = AnchorStyles.None;
-            button8.BackColor = Color.CadetBlue;
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.ForeColor = SystemColors.ControlText;
-            button8.Location = new Point(63, 71);
-            button8.Name = "button8";
-            button8.Size = new Size(35, 36);
-            button8.TabIndex = 6;
-            button8.Text = "5";
-            button8.UseVisualStyleBackColor = false;
-            button8.Click += EventBtnClickSelectDigit;
-            // 
             // button7
             // 
             button7.Anchor = AnchorStyles.None;
@@ -371,6 +356,21 @@
             button3.Text = "2";
             button3.UseVisualStyleBackColor = false;
             button3.Click += EventBtnClickSelectDigit;
+            // 
+            // button8
+            // 
+            button8.Anchor = AnchorStyles.None;
+            button8.BackColor = Color.CadetBlue;
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.ForeColor = SystemColors.ControlText;
+            button8.Location = new Point(63, 71);
+            button8.Name = "button8";
+            button8.Size = new Size(35, 36);
+            button8.TabIndex = 6;
+            button8.Text = "5";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += EventBtnClickSelectDigit;
             // 
             // lbTrySudokku
             // 
@@ -1731,8 +1731,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(993, 542);
-            Controls.Add(TlpMenu);
             Controls.Add(tplRoud);
+            Controls.Add(TlpMenu);
             Name = "Form1";
             Text = "Sudokku";
             TlpMenu.ResumeLayout(false);
