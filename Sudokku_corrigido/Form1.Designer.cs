@@ -1731,8 +1731,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(993, 542);
-            Controls.Add(tplRoud);
             Controls.Add(TlpMenu);
+            Controls.Add(tplRoud);
             Name = "Form1";
             Text = "Sudokku";
             TlpMenu.ResumeLayout(false);
