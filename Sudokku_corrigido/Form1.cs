@@ -35,9 +35,10 @@ namespace Sudokku_corrigido
             tplRoud.Visible = false;
             TlpMenu.Visible = true;
         }
-        private void EventClicksBtnsGrade(object sender, EventArgs e)
+        private  void EventClicksBtnsGrade(object sender, EventArgs e)
         {
-           
+            Button btn = sender as Button;
+            btn.Click =+ event
         }
 
         private async void EventBtnmenu(object sender, EventArgs e)
