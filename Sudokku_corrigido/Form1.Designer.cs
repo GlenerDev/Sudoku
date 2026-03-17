@@ -222,6 +222,7 @@
             // 
             pnlDiigits.Anchor = AnchorStyles.None;
             pnlDiigits.BackColor = Color.Azure;
+            pnlDiigits.Controls.Add(button3);
             pnlDiigits.Controls.Add(button90);
             pnlDiigits.Controls.Add(button12);
             pnlDiigits.Controls.Add(button11);
@@ -229,7 +230,6 @@
             pnlDiigits.Controls.Add(button9);
             pnlDiigits.Controls.Add(button7);
             pnlDiigits.Controls.Add(button4);
-            pnlDiigits.Controls.Add(button3);
             pnlDiigits.Controls.Add(button8);
             pnlDiigits.ForeColor = Color.CadetBlue;
             pnlDiigits.Location = new Point(673, 144);
@@ -1731,8 +1731,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(993, 542);
-            Controls.Add(tplRoud);
             Controls.Add(TlpMenu);
+            Controls.Add(tplRoud);
             Name = "Form1";
             Text = "Sudokku";
             TlpMenu.ResumeLayout(false);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sudokku.Services;
+using System;
 using System.Collections.Generic;
 using System.DirectoryServices.ActiveDirectory;
 using System.Drawing.Drawing2D;
@@ -12,40 +13,42 @@ namespace Sudokku_corrigido.ValidationsServices
     {
         static List<int[]> listarrayatual = new List<int[]>(9);
         static public TableLayoutPanel Pl { get; private set; }
+
         public ValidationSudokku(TableLayoutPanel pl)
         {
             Pl = pl;
         }
-        public static bool VerifySquare()
+        public void EntregarCarta()
         {
-            for (int square = 0; square < 3; square = square = 3)
-            {
-                for (int l = 0; l < 3; l++)
+
+        }
+        public bool VerifySquare()
+        {
+            for (int colummsqure = 0; colummsqure < 3; colummsqure++)
+                for (int square = colummsqure; square < 3; square = square = 3)
                 {
-                    for (int c = 0; c < 3; c++)
+                    for (int l = square; l < 3; l++)
                     {
-                        for (int c2 = 0; c2 < 9; c2++)
+                        for (int c = 0; c < 3; c++)
                         {
-                            listarrayatual[c][c2] = int.Parse(Pl.Controls[c2].Text);
+                            for (int c2 = 0; c2 < 9; c2++)
+                            {
+                                listarrayatual.Add(new int[9]);
+                                listarrayatual[c][c2] = int.Parse(((Button)Pl.Controls[c2]).Text);
+                            }
                         }
                     }
                 }
-            }
             var rag = Enumerable.Range(1, 9);
             foreach (var item in listarrayatual)
             {
-                foreach (var i in rag)
-                {
-                    if (item.Contains(i))
-                    {
-                        continue;
-                    }
-                    return false;
-                }
+                foreach (var i in item)
+                    if (item.Contains(i)) { continue; }
+                return false;
             }
             return true;
         }
-        public static bool VerifyRow()
+        public bool VerifyRow()
         {
             VerifySquare();
             for (int i = 0; i < Pl.Controls.Count; i++)
@@ -54,7 +57,7 @@ namespace Sudokku_corrigido.ValidationsServices
                 {
                     var range = Enumerable.Range(1, 9);
                     var cont = 0;
-                    foreach (int item in range) 
+                    foreach (int item in range)
                     {
                         if (listarrayatual[cont].Contains(item))
                         {
@@ -66,7 +69,7 @@ namespace Sudokku_corrigido.ValidationsServices
             }
             return true;
         }
-        public static bool VerifyCollum()
+        public bool VerifyCollum()
         {
 
             VerifySquare();
